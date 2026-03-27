@@ -1,6 +1,6 @@
 # LLM-CTI
 
-#  LLM will go to the target_url and clicks links and craete a report. 
+#  LLM will go to the target_url and clicks links and create a report. 
 
 # target_url = "https://www.cyberdaily.au/security/13306-patch-now-exploitation-of-nginx-ui-vulnerability-imminent-warns-threat-analyst"
 
