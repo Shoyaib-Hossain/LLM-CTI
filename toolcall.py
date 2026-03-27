@@ -21,7 +21,7 @@ from langchain_openai import ChatOpenAI  # langchain_openai: wrapper for OpenAI 
 from playwright.async_api import async_playwright  # playwright.async_api: async browser automation API
 
 # ------------------------------
-# Utilities (unchanged)
+# Utilities 
 # ------------------------------
 def normalize_url(base: str, link: str) -> Optional[str]:
     # base: str - parameter holding the base URL (absolute) used for urljoin()
@@ -51,7 +51,7 @@ def extract_main_text(html: str) -> str:
     return "\n".join(blocks).strip()  # join(): combines blocks with newlines; strip(): removes leading/trailing whitespace
 
 # ------------------------------
-# Playwright Browser Tool (unchanged)
+# Playwright Browser Tool 
 # ------------------------------
 class PlaywrightBrowseTool(BaseTool):
     # BaseTool: parent class providing invoke(), name, description, and schema generation
