@@ -156,7 +156,7 @@ def research_and_report(target_url: str) -> str:
     tools = [PlaywrightBrowseTool()]  # tools: list of BaseTool instances passed to LLM
     llm = get_llm().bind_tools(tools)  # bind_tools(): attaches tool schemas to LLM for function calling
 
-    # Agent system prompt (same rules as original)
+    # Agent system prompt 
     agent_system = SystemMessage(content=(
         "You are an autonomous security intelligence research agent. "
         "Your ONLY job is to browse the given URL and extract real, factual information for these four sections:\n"
@@ -176,7 +176,7 @@ def research_and_report(target_url: str) -> str:
         "exploit status, affected systems, IoCs, and source URLs."
     ))  # SystemMessage: immutable system instruction for the LLM
 
-    # Starting query (same as original)
+    # Starting query 
     query = (
         f"Browse this URL and extract all available information for these four sections: "
         f"Vulnerability Details, Exploitation Status, Impact / Risk, Indicators of Compromise (IoCs).\n"
@@ -221,7 +221,7 @@ def research_and_report(target_url: str) -> str:
             evidence_parts.append(f"[AGENT SUMMARY]:\n{m.content}")
     evidence = "\n\n---\n\n".join(evidence_parts) if evidence_parts else "No evidence gathered."
 
-    # Reporter (same as original)
+    # Reporter 
     reporter_llm = get_llm()  # reporter_llm: separate LLM instance for final report writing (no tools)
     reporter_system = (
         "You are a professional security report writer. "
