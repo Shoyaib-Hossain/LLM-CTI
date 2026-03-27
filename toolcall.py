@@ -148,7 +148,7 @@ def get_llm():
     )
 
 # ------------------------------
-# Simple ReAct Loop + Report
+# ReAct Loop + Report
 # ------------------------------
 def research_and_report(target_url: str) -> str:
     # target_url: str - parameter: starting cyberdaily.au article URL
